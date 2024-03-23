@@ -213,4 +213,5 @@ function saveNote() {
   if (nameID === "") return;
   const ind = players.findIndex(x => x.name == nameID);
   players[ind].note = text;
+  saveData();
 };
