@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <title>Initiative</title>
+</head>
+<body>
+  <div class="table">
+    <div class="turn formNew">
+      <button class="turn-btn" id="turnBtnMinus">-</button>
+      <div>Turn <span id="turnCounter">0</span></div>
+      <button class="turn-btn" id="turnBtnPlus">+</button>
+    </div>
+    <div class="lista">
+      <ul class="" id="lista">INITIATIVE
+        <li class="list-header">
+          <div class="line">
+            <div>
+              Active player
+            </div>
+            <div class="name">Name</div>
+            <div>
+              Death
+            </div>
+          </div>
+        </li>
+      </ul>
+      <button id="sortInit">Sort initiative</button>
+    </div>
+    <div class="lista details">
+      <div id="reference">- - -</div>
+      <textarea name="status" id="status" cols="40" rows="10"></textarea>
+      <button onclick="saveNote()">Update</button>
+    </div>
+    <div class="formNew">
+      <form id="newItemForm">
+        <label for="playerNew">Name</label>
+        <input type="text" id="playerNew" autofocus>
+        <label for="initiativeNew">Initiative</label>
+        <input type="number" min="-10" max="200" id="initiativeNew">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  <div>
+    <button onclick="saveData()">SAVE</button>
+    <button onclick="reset()">RESET</button>
+  </div>
+</body>
+</html>
