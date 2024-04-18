@@ -6,6 +6,8 @@ const statusText = document.getElementById("status");
 const newItemForm = document.getElementById("newItemForm");
 const playerNew = document.getElementById("playerNew");
 const initiativeNew = document.getElementById("initiativeNew");
+const modal = document.getElementById("modal");
+const overlay = document.getElementById("overlay");
 let players = [];
 let turn = 0;
 
@@ -44,6 +46,16 @@ $("#turnBtnMinus").click(function() {
   turn--;
   $("#turnCounter").text(turn);
   saveData();
+});
+
+$("#modalBtnOpen").click(function(){
+  overlay.classList.toggle('active');
+  modal.classList.toggle('active');
+});
+
+$("#modalBtnClose,#overlay").click(function(){
+  overlay.classList.toggle('active');
+  modal.classList.toggle('active');
 });
 
 //Event listener that activate when the drag element is over the list
