@@ -16,7 +16,8 @@ function loadData() {
   const dataTurn = JSON.parse(localStorage.getItem('turn'));
   if (!dataPlayer) return;
   turn = dataTurn;
-  $("#turnCounter").text(turn)
+  $("#sortInit").hide();
+  $("#turnCounter").text(turn);
   players = dataPlayer;
   players.forEach((x) => renderPG(x));
   $('document').ready(function() {
