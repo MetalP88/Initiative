@@ -27,6 +27,9 @@ function loadData() {
 loadData();
 
 function saveData() {
+  const newInit = [...$(".drag")];
+  const newInitID = newInit.map((el) => el.dataset.id);
+  players.sort((a, b) => newInitID.indexOf(a.nameID) - newInitID.indexOf(b.nameID));
   localStorage.setItem('players', JSON.stringify(players));
   localStorage.setItem('turn', JSON.stringify(turn))
 };
@@ -35,7 +38,6 @@ function reset() {
   localStorage.removeItem('players');
   location.reload();
 }
-
 
 $("#turnBtnPlus").click(function() {
   turn++;
@@ -133,6 +135,7 @@ function renderPG(pg) {
   const child = document.createElement("li");
   child.classList.add("drag");
   child.setAttribute("draggable", true);
+  child.setAttribute("data-id", pg.nameID);
   child.insertAdjacentHTML("afterbegin", `
     <div class="line">
       <div>
@@ -209,7 +212,7 @@ function death (e) {
   const el = e.target.closest(".line").querySelector('[name="pname"]');
   el.classList.toggle('death-player');
   const ind = players.findIndex(x => x.name == el.textContent);
-  console.log(e.target.checked);
+  // console.log(e.target.checked);
   players[ind].death = e.target.checked;
   saveData();
 };
