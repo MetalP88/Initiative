@@ -147,7 +147,7 @@ function renderPG(pg) {
       </div>
     </div>`);
   list.appendChild(child);
-  child.addEventListener('mousedown', show);
+  child.addEventListener('click', show);
   document.getElementById(pg.nameID +'-active').addEventListener('change', active);
   document.getElementById(pg.nameID +'-death').addEventListener('change', death);
   document.querySelectorAll("li.drag").forEach(item => {
